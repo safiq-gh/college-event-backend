@@ -13,3 +13,6 @@ app.add_middleware(
 
 app.include_router(event.router, prefix="/api")
 app.include_router(register.router, prefix="/api")
+@app.get("/api/health")
+def health():
+    return {"success": True, "data": {"status": "ok"}}
